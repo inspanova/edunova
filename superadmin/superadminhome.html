@@ -1,0 +1,164 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../js/superadmin.js"></script>
+        <script type="text/javascript" src="../js/validator.js"></script>
+        <link href="../css/commonStyles.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body onload="getSchoolDetails();">
+        <div id='divTblList'>
+            <input type='button' value="Create a School" id='btnAddSchool'/>
+            <table id="tblSchoolList">
+                <thead>
+                    <tr>
+                        <th>School Name</th>
+                        <th>Address 1</th>
+                        <th>Address 2</th>
+                        <th>Phone Number 1</th>
+                        <th>Phone Number 2</th>
+                        <th>Edit</th>
+                        <th>Enable/Disable</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table> 
+        </div>
+        <div id="divInsertSchool">
+            <table>
+                <tr>
+                    <td colspan="3"> <span>School Name</span>
+
+                        <span><input type="text" id="txtSchoolName"/></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span>Address Line1</span>
+                        <span><input type="text" id="txtAddress1"/></span></td>
+
+                    <td>
+                        <span>Address Line2</span>
+                        <span><input type="text" id="txtAddress2"/></span>
+                    </td>
+                    <td>
+                        <span>Pin code</span>
+                        <span><input type="text" id="txtPincode" /></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Phone Number1</span>
+                        <span><input type="text" id="txtPhone1"/></span>
+                    </td>
+                    <td>
+                        <span>Phone Number2</span>
+                        <span><input type="text" id="txtPhone2"/></span>
+                    </td>
+                    <td>
+                        <span>Fax</span>
+                        <span><input type="text" id="txtFax"/></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>Country</span>
+                        <span><select id="ddlCountry">
+                                <option value="1">India</option>
+                            </select></span>
+                    </td>
+                    <td>
+                        <span>State</span>
+                        <span><select id="ddlState">
+                                <option value="1">Kerala</option>
+                            </select></span>
+                    </td>
+                    <td>
+                        <span>District</span>
+                        <span><select id="ddlDistrict">
+                                <option value="1">Kollam</option>
+                            </select></span>
+                    </td>
+                </tr>
+
+                <tr>
+                     <td>
+                        <span>School Registration Code</span>
+                        <span><input type="text" id="txtRegistration"/></span>
+                    </td>
+                     <td>
+                        <span>School Website</span>
+                        <span><input  id="txtWebsite" type="text"/></span>
+                    </td>
+                    <td>
+                        <span>Established Date</span>
+                        <span><input  id="txtEstablishedDate" type="text"/></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                         <span>No. of Login License</span>
+                        <span><input type="text" id="txtLicense"/></span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <span> School Administrator's Details</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span>Email Id</span>
+                        <span><input type="text" id='txtAdminEmail'/></span>
+                    </td>
+                    <td>
+                        <span>First Name</span>
+                        <span><input type="text" id='txtFirstName'/></span>
+                    </td>
+                    <td>
+                        <span>Last Name</span>
+                        <span><input type="text" id='txtLastName'/></span>
+                    </td>
+
+                </tr>
+              
+                <tr>
+
+                    <td>
+                        <span>Password</span>
+                        <span><input type="text" id='txtAdminPassword'/></span>
+                    </td>
+                    <td>
+                        <span>Password Expiry Date</span>
+                        <span><input type="text" id="txtPasswordExpiry"/></span>
+                    </td>
+                    <td>
+                        
+                    </td>
+
+                </tr>
+                <tfoot>
+                    <tr>
+                        <th colspan="3"><input type="button" value="Save" id="btnSave"/>
+                <input type="button" value="Cancel" onclick="cancelSchool();"/></th>
+                    </tr>
+                </tfoot>
+            </table>
+
+
+            <div>
+
+            </div>
+        </div>
+
+    </body>
+</html>

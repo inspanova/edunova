@@ -1,0 +1,121 @@
+/* 
+    Document   : commonStyles
+    Created on : 4 Nov, 2013, 9:12:38 PM
+    Author     : krishna
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+span
+{
+    display: block;
+}
+input[type='text'],select
+{
+    width: 250px;
+    height: 25px;
+}
+
+input[type='password']
+{
+    width: 250px;
+    height: 25px;
+}
+fieldset
+{
+    width: 400px;
+    margin: auto;
+
+}
+.loginBanner{
+
+    background:rgb(124, 185, 252);
+    width: 99%;
+    height: 100px;
+}
+#divInsertSchool{
+    width: 80%;
+    margin: auto;
+}
+.leftPanel
+{
+    float: left;
+    width: 50%;
+    height: 600px;
+}
+.rightPanel
+{
+    float: left;
+    width: 49%;
+    height: 600px;
+}
+
+#divInsertSchool table
+{
+    margin-left: 50px;
+}
+#tblSchoolList tbody tr:nth-child(even)
+{
+    background: rgb(232, 237, 253);
+}
+#tblSchoolList thead tr
+{
+    background: rgb(138, 162, 241);
+    color: white;
+    height: 30px;
+
+}
+#tblSchoolList
+{
+    width:100%;
+    border-collapse: collapse;
+    text-align: left;
+
+}
+#divTblList,#divInsertSchool
+{
+    width: 80%;
+    margin: auto;
+    margin-top: 75px;
+}
+#txtSchoolName
+{
+    width: 500px;
+    height: 25px;
+}
+#divMainMenu table span
+{
+    cursor:pointer;
+    color: blue;
+    text-decoration: underline;
+}
+#multiDivDdl>span
+{
+    display: block;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+#multiDivDdl>span input
+{
+    padding-right: 10px;
+}
+#multiDivDdl
+{
+    float:left;
+    width: 120px;
+    height: 200px;
+    overflow:auto;
+    border: 1px solid black;
+}
+.checked
+{
+    background: #DBF1FF;
+
+}
+#ddlStd
+{
+    float: left;
+}
