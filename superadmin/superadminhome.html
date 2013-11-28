@@ -3,16 +3,20 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html>
+<html ng-app="edunova">
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript" src="../js/superadmin.js"></script>
-        <script type="text/javascript" src="../js/validator.js"></script>
+        <script src='../js/angular_app/lib/angular/angular.js' type="text/javascript"></script>
+        <script src='../js/angular_app/lib/angular/angular-resource.js' type="text/javascript"></script>
+        <script src='../js/angular_app/app.js' type="text/javascript"></script>
+        <script src='../js/angular_app/controllers.js' type="text/javascript"></script>
+        <script src='../js/angular_app/services.js' type="text/javascript"></script>
         <link href="../css/commonStyles.css" type="text/css" rel="stylesheet"/>
     </head>
-    <body onload="getSchoolDetails();">
+    <body ng-controller="SuperAdminController" ng-init="init()">
         <div id='divTblList'>
             <input type='button' value="Create a School" id='btnAddSchool'/>
             <table id="tblSchoolList">
@@ -27,6 +31,20 @@ and open the template in the editor.
                         <th>Enable/Disable</th>
                     </tr>
                 </thead>
+                <tr ng-repeat="school in schools">
+                    <td>[[school.schoolName]]</td>
+                    <td>[[school.addressLine1]]</td>
+                    <td>[[school.addressLine2]]</td>
+                    <td>[[school.phone1]]</td>
+                    <td>[[school.phone2]]</td>
+                    <td><img src="../img/edit.png" class="edit_icon"/></td>
+                    <td>
+                        <select ng-bind="[[school.enabled]]" ng-change="enableOrDiableSchool(this.val(), school)">
+                            <option value="1">Enabled</option>
+                            <option value="0">Disabled</option>
+                        </select>
+                    </td>
+                </tr>
                 <tbody>
 
                 </tbody>

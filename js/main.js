@@ -12,56 +12,7 @@ $(document).ready(function() {
     });
 });
 
-function authenticate()
-{
 
-    var username = $("#txtUserName").val().trim();
-    var password = $("#txtPassword").val().trim();
-    if (!isEmail(username)) {
-        alert("Please enter a valid email id");
-        return false;
-    }
-    if (password == "")
-    {
-        alert("Please enter a password");
-        return false;
-    }
-
-
-    $.ajax({
-        url: "http://" + host + "/edunova-restful/login/login",
-        type: "POST",
-        action: "Authenticating",
-        data: {
-            username: username,
-            password: password
-        },
-        success: function(userMap) {
-            alert(userMap.roleId);
-            switch (userMap.roleId)
-            {
-
-                case 0:
-                    alert("Incorrect Username or Password");
-                    break;
-                case 1:
-                    location.href = "superadmin/superadminhome.html";
-                    break;
-                case 2:
-
-                    location.href = "home.html";
-                    break;
-                default :
-
-            }
-        },
-        error: function() {
-            alert("Incorrect username or password");
-        }
-
-
-    });
-}
 function fillClassDropDown()
 {
     $.ajax({
