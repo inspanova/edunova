@@ -3,7 +3,7 @@ To change this template, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
-<html>
+<html ng-app="edunova">
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,20 +12,25 @@ and open the template in the editor.
         <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
         <script src="js/jquery-ui.js" type="text/javascript"></script>
         <script src="js/jquery-1.8.3.min.js" type="text/javascript"></script>
-        <script src='js/validator.js' type="text/javascript"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script src='js/angular_app/lib/angular/angular.js' type="text/javascript"></script>
+        <script src='js/angular_app/lib/angular/angular-resource.js' type="text/javascript"></script>
+        <script src='js/angular_app/app.js' type="text/javascript"></script>
+        <script src='js/angular_app/controllers.js' type="text/javascript"></script>
+        <script src='js/angular_app/services.js' type="text/javascript"></script>
+        <!--<script src='js/validator.js' type="text/javascript"></script>
+        <script type="text/javascript" src="js/main.js"></script>-->
         <link href="css/commonStyles.css" type="text/css" rel="stylesheet"/>
     </head>
-    <body>
+    <body ng-controller="HomeController">
         <div>
             <div class="loginBanner"></div>
             <fieldset>
                 <legend>Login</legend>
                  <span>User Name or Email Id</span>
-                 <input type="text" id="txtUserName" tabindex="1" autofocus/>
+                 <input type="text" id="txtUserName" tabindex="1" autofocus ng-model="username"/>
             <span>Password</span>
-            <input type="password" id="txtPassword" tabindex="2"/>
-            <span><input type="button" id="btnLogin" value="Login" onclick="authenticate();" tabindex="3"/></span>
+            <input type="password" id="txtPassword" tabindex="2" ng-model="password"/>
+            <span><input type="button" id="btnLogin" value="Login" ng-click="login();" tabindex="3"/></span>
             </fieldset>
            
         </div>
