@@ -39,7 +39,8 @@ and open the template in the editor.
                     <td>[[school.phone2]]</td>
                     <td><img src="../img/edit.png" class="edit_icon"/></td>
                     <td>
-                        <select ng-bind="[[school.enabled]]" ng-change="enableOrDiableSchool(this.val(), school)">
+                        <input type="hidden" name="school.enabled" value="[[scoll.enabled]]" />
+                        <select ng-model="school.enabled" ng-change="enableOrDisableSchool(this.val(), school)">
                             <option value="1">Enabled</option>
                             <option value="0">Disabled</option>
                         </select>
@@ -55,53 +56,53 @@ and open the template in the editor.
                 <tr>
                     <td colspan="3"> <span>School Name</span>
 
-                        <span><input type="text" id="txtSchoolName"/></span>
+                        <span><input type="text" id="txtSchoolName" ng-model="new_school.attributes.schoolName"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td><span>Address Line1</span>
-                        <span><input type="text" id="txtAddress1"/></span></td>
+                        <span><input type="text" id="txtAddress1" ng-model="new_school.attributes.address1"/></span></td>
 
                     <td>
                         <span>Address Line2</span>
-                        <span><input type="text" id="txtAddress2"/></span>
+                        <span><input type="text" id="txtAddress2" ng-model="new_school.attributes.address2"/></span>
                     </td>
                     <td>
                         <span>Pin code</span>
-                        <span><input type="text" id="txtPincode" /></span>
+                        <span><input type="text" id="txtPincode" ng-model="new_school.attributes.pincode"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <span>Phone Number1</span>
-                        <span><input type="text" id="txtPhone1"/></span>
+                        <span><input type="text" id="txtPhone1" ng-model="new_school.attributes.phone1"/></span>
                     </td>
                     <td>
                         <span>Phone Number2</span>
-                        <span><input type="text" id="txtPhone2"/></span>
+                        <span><input type="text" id="txtPhone2" ng-model="new_school.attributes.phone2"/></span>
                     </td>
                     <td>
                         <span>Fax</span>
-                        <span><input type="text" id="txtFax"/></span>
+                        <span><input type="text" id="txtFax" ng-model="new_school.attributes.fax"/></span>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
                         <span>Country</span>
-                        <span><select id="ddlCountry">
+                        <span><select id="ddlCountry" ng-model="new_school.attributes.country">
                                 <option value="1">India</option>
                             </select></span>
                     </td>
                     <td>
                         <span>State</span>
-                        <span><select id="ddlState">
+                        <span><select id="ddlState" ng-model="new_school.attributes.state">
                                 <option value="1">Kerala</option>
                             </select></span>
                     </td>
                     <td>
                         <span>District</span>
-                        <span><select id="ddlDistrict">
+                        <span><select id="ddlDistrict" ng-model="new_school.attributes.district">
                                 <option value="1">Kollam</option>
                             </select></span>
                     </td>
@@ -110,21 +111,21 @@ and open the template in the editor.
                 <tr>
                      <td>
                         <span>School Registration Code</span>
-                        <span><input type="text" id="txtRegistration"/></span>
+                        <span><input type="text" id="txtRegistration" ng-model="new_school.attributes.registration"/></span>
                     </td>
                      <td>
                         <span>School Website</span>
-                        <span><input  id="txtWebsite" type="text"/></span>
+                        <span><input  id="txtWebsite" type="text" ng-model="new_school.attributes.website"/></span>
                     </td>
                     <td>
                         <span>Established Date</span>
-                        <span><input  id="txtEstablishedDate" type="text"/></span>
+                        <span><input  id="txtEstablishedDate" type="text" ng-model="new_school.attributes.establishedDate"/></span>
                     </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                          <span>No. of Login License</span>
-                        <span><input type="text" id="txtLicense"/></span>
+                         <span><input type="text" id="txtLicense" ng-model="new_school.attributes.license"/></span>
 
                     </td>
                 </tr>
@@ -136,15 +137,15 @@ and open the template in the editor.
                 <tr>
                     <td>
                         <span>Email Id</span>
-                        <span><input type="text" id='txtAdminEmail'/></span>
+                        <span><input type="text" id='txtAdminEmail' ng-model="new_school.attributes.email"/></span>
                     </td>
                     <td>
                         <span>First Name</span>
-                        <span><input type="text" id='txtFirstName'/></span>
+                        <span><input type="text" id='txtFirstName' ng-model="new_school.attributes.firstName"/></span>
                     </td>
                     <td>
                         <span>Last Name</span>
-                        <span><input type="text" id='txtLastName'/></span>
+                        <span><input type="text" id='txtLastName' ng-model="new_school.attributes.lastName"/></span>
                     </td>
 
                 </tr>
@@ -153,11 +154,11 @@ and open the template in the editor.
 
                     <td>
                         <span>Password</span>
-                        <span><input type="text" id='txtAdminPassword'/></span>
+                        <span><input type="text" id='txtAdminPassword' ng-model="new_school.attributes.password"/></span>
                     </td>
                     <td>
                         <span>Password Expiry Date</span>
-                        <span><input type="text" id="txtPasswordExpiry"/></span>
+                        <span><input type="text" id="txtPasswordExpiry" ng-model="new_school.attributes.expiryDate"/></span>
                     </td>
                     <td>
                         
@@ -166,7 +167,7 @@ and open the template in the editor.
                 </tr>
                 <tfoot>
                     <tr>
-                        <th colspan="3"><input type="button" value="Save" id="btnSave"/>
+                        <th colspan="3"><input type="button" value="Save" id="btnSave"  ng-click="createSchool()"/>
                 <input type="button" value="Cancel" onclick="cancelSchool();"/></th>
                     </tr>
                 </tfoot>

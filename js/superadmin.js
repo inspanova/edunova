@@ -32,7 +32,7 @@ $(document).ready(function() {
         switch (value)
         {
             case "Save":
-                createSchool();
+                //createSchool();
                 break;
             case "Update":
                 updateSchool($("#btnSave").data("schoolId"));
